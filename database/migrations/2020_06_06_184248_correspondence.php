@@ -21,7 +21,7 @@ class Correspondence extends Migration
             $table->string('city', 60);
             $table->string('uf', 2);
             $table->string('status', 20);
-            $table->foreign('id_recipient')->references('id')->on('recipient');
+            $table->foreign('id_recipient')->references('id')->on('recipients');
             $table->timestamp('created_at')->useCurrent();
         });
     }
