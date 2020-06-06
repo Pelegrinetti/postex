@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function(){
+    return view('layouts.default');
+});
+
 Auth::routes([
     'register' => false,
     'reset' => false,
