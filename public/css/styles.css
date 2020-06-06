@@ -28,7 +28,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .login-card {
@@ -40,6 +39,7 @@ html, body {
     padding: 24px 40px;
     border-radius: 8px;
 }
+
 .login-card img {
     width: 90px;
 }
