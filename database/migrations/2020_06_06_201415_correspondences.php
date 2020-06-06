@@ -17,6 +17,8 @@ class Correspondences extends Migration
             $table->bigIncrements('id');
             $table->string('recipient', 80);
             $table->string('street', 80);
+            $table->integer('number');
+            $table->string('neighborhood', 80);
             $table->string('cep', 8);
             $table->string('city', 60);
             $table->string('uf', 2);
