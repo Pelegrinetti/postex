@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware(['auth'])->prefix('correspondences')->group(function () {
+    Route::get('/', 'CorrespondencesController@index')->name('correspondences.index');
+});
+
 Auth::routes([
     'register' => false,
     'reset' => false,
