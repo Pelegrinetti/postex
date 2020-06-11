@@ -4,17 +4,44 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Correspondence;
+use App\Http\Requests\CreateCorrespondenceRequest;
 
 class CorrespondencesController extends Controller
 {
-    public function index(Request $req)
-    {
-        try {
-            $correspondences = Correspondence::paginate();
+  public function index(Request $req)
+  {
+    try {
+      $correspondences = Correspondence::paginate();
 
-            return view('correspondences', ["correspondences" => $correspondences]);
-        } catch (\Exception $ex) {
-            return view('correspondences', ['error' => true]);
-        }
+      return view('correspondences', ["correspondences" => $correspondences]);
+    } catch (\Exception $ex) {
+      return view('correspondences', ['error' => true]);
     }
+  }
+
+  public function create(CreateCorrespondenceRequest $req)
+  {
+    $req->validate();
+
+    try {
+      $correspondence = new Correspondence();
+
+      $correspondence->recipient = $req->input('recipient');
+      $correspondence->street = $req->input('street');
+      $correspondence->number = $req->input('number');
+      $correspondence->neighborhood = $req->input('neighborhood');
+      $correspondence->cep = $req->input('cep');
+      $correspondence->city = $req->input('city');
+      $correspondence->uf = $req->input('uf');
+      $correspondence->status = $req->input('status');
+      $correspondence->cep = $req->input('cep');
+      $correspondence->id_recipient = $req->input('id_recipient');
+
+      $correspondence->save();
+
+      return redirect()->back()->with('status', ['created' => true]);
+    } catch (\Exception $ex) {
+      return redirect()->back()->with('status', ['created' => false]);
+    }
+  }
 }
