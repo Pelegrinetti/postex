@@ -212,18 +212,17 @@ html, body {
 
 /* Table */
 
-.content {
+.table {
     width: 100%;
-    padding-left: 16px;
+    margin-left: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .content-table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #cccccc;
-}
-.content-table tr {
-    border: 1px solid #cccccc;
 }
 
 .table-head {
@@ -234,24 +233,18 @@ html, body {
     text-transform: uppercase;
 }
 
-.table-head tr th{
-    width: 11%;
+.table-body {
+    width: 100%;
+    background-color: #ffffff;
+    color: #25213B;
+    font-size: 14px;
+}
+
+.table-body tr {
+    border-top: 1px solid #cccccc;
+}
+
+.table-head tr th, .table-body tr td{
     text-align: center;
     padding: 15px;
-}
-
-.table-head tr th:nth-child(1),
-.table-head tr th:nth-child(4),
-.table-head tr th:nth-child(7),
-.table-head tr th:nth-child(9) {
-    width: 6%;
-}
-
-.table-head tr th:nth-child(2), .table-head tr th:nth-child(3) {
-    width: 22%;
-}
-
-.content table tbody tr td {
-    padding: 15px;
-    text-align: center;
 }
