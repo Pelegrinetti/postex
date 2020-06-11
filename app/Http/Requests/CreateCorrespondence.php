@@ -54,6 +54,7 @@ class CreateCorrespondence extends FormRequest
       'status.required'  => 'A situação é obrigatório.',
       'cep.required'  => 'CEP é obrigatório.',
       'id_recipient.required'  => 'Identificação do destinatário é obrigatório.',
+      'max' => 'Limite de caracteres foi ultrapassado.'
     ];
   }
 }
