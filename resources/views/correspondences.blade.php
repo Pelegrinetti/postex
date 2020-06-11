@@ -11,11 +11,11 @@
                 <a href="/" class="btn-new">Novo</a>
         </section>
 
-        <section class="content">
+        <section class="table">
             <table class="content-table">
                 <thead class="table-head">
                     <tr>
-                        <th>Id</th>
+                        <th>ID</th>
                         <th>Destinatário</th>
                         <th>Logradouro</th>
                         <th>Número</th>
@@ -26,24 +26,20 @@
                         <th>Mais</th>
                     </tr>
                 </thead>
-                <tbody>
-                    @if(isset($error) && $error === true)
-                        {{$message}}
-                    @else
-                        @foreach ($correspondences as $correspondence)
-                            <tr>
-                                <td>{{$correspondence->id}}</td>
-                                <td>{{$correspondence->recipient}}</td>
-                                <td>{{$correspondence->street}}</td>
-                                <td>{{$correspondence->number}}</td>
-                                <td>{{$correspondence->neighborhood}}</td>
-                                <td>{{$correspondence->city}}</td>
-                                <td>{{$correspondence->uf}}</td>
-                                <td>{{$correspondence->cep}}</td>
-                                <td>Mais</td>
-                            </tr>
-                        @endforeach
-                    @endif
+                <tbody class="table-body">
+                @foreach ($correspondences as $correspondence)
+                    <tr>
+                        <td>{{$correspondence->id}}</td>
+                        <td>{{$correspondence->recipient}}</td>
+                        <td>{{$correspondence->street}}</td>
+                        <td>{{$correspondence->number}}</td>
+                        <td>{{$correspondence->neighborhood}}</td>
+                        <td>{{$correspondence->city}}</td>
+                        <td>{{$correspondence->uf}}</td>
+                        <td>{{$correspondence->cep}}</td>
+                        <td><i class="fas fa-caret-down"></i></td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </section>
