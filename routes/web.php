@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth'])->prefix('/')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
 
 Route::middleware(['auth'])->prefix('correspondences')->group(function () {
