@@ -14,19 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth'])->prefix('/')->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+  Route::get('/', function () {
+    return view('welcome');
+  });
 });
 
 Route::middleware(['auth'])->prefix('correspondences')->group(function () {
-    Route::get('/', 'CorrespondencesController@index')->name('correspondences.index');
+  Route::get('/', 'CorrespondencesController@index')->name('correspondences.index');
 });
 
 Auth::routes([
-    'register' => false,
-    'reset' => false,
-    'verify' => false,
+  'register' => false,
+  'reset' => false,
+  'verify' => false,
 ]);
 
 Route::get('/home', 'HomeController@index')->name('home');
