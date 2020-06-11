@@ -28,7 +28,6 @@ class CreateCorrespondenceRequest extends FormRequest
       'street' => 'required|max:80',
       'number' => 'required',
       'neighborhood' => 'required|max:80',
-      'cep' => 'required',
       'city' => 'required',
       'uf' => 'required|max:2',
       'status' => 'required|max:20',
@@ -52,7 +51,6 @@ class CreateCorrespondenceRequest extends FormRequest
       'city.required'  => 'Cidade é obrigatório.',
       'uf.required'  => 'UF é obrigatório.',
       'status.required'  => 'A situação é obrigatório.',
-      'cep.required'  => 'CEP é obrigatório.',
       'id_recipient.required'  => 'Identificação do destinatário é obrigatório.',
       'max' => 'Limite de caracteres foi ultrapassado.'
     ];
