@@ -45,6 +45,7 @@ class CreateCorrespondenceRequest extends FormRequest
   {
     return [
       'recipient.required' => 'Destinatário é obrigatório.',
+      'street.required'  => 'O logradouro é obrigatório.',
       'number.required'  => 'O número é obrigatório.',
       'neighborhood.required'  => 'Bairro é obrigatório.',
       'cep.required'  => 'CEP é obrigatório.',
