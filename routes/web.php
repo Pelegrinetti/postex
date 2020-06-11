@@ -19,6 +19,10 @@ Route::middleware(['auth'])->prefix('/')->group(function () {
     });
 });
 
+Route::middleware(['auth'])->prefix('correspondences')->group(function () {
+    Route::get('/', 'CorrespondencesController@index')->name('correspondences.index');
+});
+
 Auth::routes([
     'register' => false,
     'reset' => false,
