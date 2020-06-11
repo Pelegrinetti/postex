@@ -217,16 +217,16 @@ html, body {
     padding-left: 16px;
 }
 
-.content table {
+.content-table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #cccccc;
 }
-.content table tr {
+.content-table tr {
     border: 1px solid #cccccc;
 }
 
-.content table thead {
+.table-head {
     width: 100%;
     background-color: #E3EBF6;
     color: #0748B4;
@@ -234,20 +234,20 @@ html, body {
     text-transform: uppercase;
 }
 
-.content table thead tr th{
+.table-head tr th{
     width: 11%;
     text-align: center;
     padding: 15px;
 }
 
-.content table thead tr th:nth-child(1),
-.content table thead tr th:nth-child(4),
-.content table thead tr th:nth-child(7),
-.content table thead tr th:nth-child(9) {
+.table-head tr th:nth-child(1),
+.table-head tr th:nth-child(4),
+.table-head tr th:nth-child(7),
+.table-head tr th:nth-child(9) {
     width: 6%;
 }
 
-.content table thead tr th:nth-child(2), .content table thead tr th:nth-child(3) {
+.table-head tr th:nth-child(2), .table-head tr th:nth-child(3) {
     width: 22%;
 }
 
@@ -255,6 +255,3 @@ html, body {
     padding: 15px;
     text-align: center;
 }
-
-
-

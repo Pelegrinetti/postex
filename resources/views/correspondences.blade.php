@@ -12,8 +12,8 @@
         </section>
 
         <section class="content">
-            <table>
-                <thead>
+            <table class="content-table">
+                <thead class="table-head">
                     <tr>
                         <th>Id</th>
                         <th>Destinatário</th>
