@@ -24,8 +24,8 @@ Route::middleware(['auth'])->prefix('correspondences')->group(function () {
   Route::get('/create', function () {
     // TODO: Create register form
     echo 'Cadastro de correspondências.';
-  });
-  Route::post('/create/save', 'CorrespondencesController@create');
+  })->name('correspondence.create');
+  Route::post('/create/save', 'CorrespondencesController@create')->name('correspondence.save');
 });
 
 Auth::routes([
