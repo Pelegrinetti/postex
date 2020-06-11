@@ -36,4 +36,24 @@ class CreateCorrespondence extends FormRequest
       'id_recipient' => 'required',
     ];
   }
+
+  /**
+   * Get the error messages for the defined validation rules.
+   *
+   * @return array
+   */
+  public function messages()
+  {
+    return [
+      'recipient.required' => 'Destinatário é obrigatório.',
+      'number.required'  => 'O número é obrigatório.',
+      'neighborhood.required'  => 'Bairro é obrigatório.',
+      'cep.required'  => 'CEP é obrigatório.',
+      'city.required'  => 'Cidade é obrigatório.',
+      'uf.required'  => 'UF é obrigatório.',
+      'status.required'  => 'A situação é obrigatório.',
+      'cep.required'  => 'CEP é obrigatório.',
+      'id_recipient.required'  => 'Identificação do destinatário é obrigatório.',
+    ];
+  }
 }
