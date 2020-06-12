@@ -22,7 +22,7 @@ class CorrespondencesController extends Controller
 
   public function create(CreateCorrespondenceRequest $req)
   {
-    $req->validate();
+    $req->validated();
 
     try {
       $correspondence = new Correspondence();
