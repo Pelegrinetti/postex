@@ -8,7 +8,7 @@
                 <i class="fas fa-search icon-input"></i>
                 <input type="search" id="search-recipient" name="q" placeholder="Buscar destinatário" autofocus>
             </div>
-                <a href="/" class="btn-new">Novo</a>
+            <a href="{{ route('correspondence.create') }}" class="btn-new">Novo</a>
         </section>
 
         <section class="table">
