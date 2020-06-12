@@ -42,7 +42,7 @@ class CorrespondencesController extends Controller
       return redirect()->back()->with('status', ['created' => true]);
     } catch (\Exception $ex) {
       Log::error($ex->getMessage());
-      return redirect()->back(500)->with('status', ['created' => false]);
+      return redirect()->back()->with('status', ['created' => false]);
     }
   }
 }
