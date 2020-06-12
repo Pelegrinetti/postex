@@ -14,19 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth'])->prefix('/')->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+  Route::get('/', function () {
+    return view('welcome');
+  });
 });
 
 Route::middleware(['auth'])->prefix('correspondences')->group(function () {
-    Route::get('/', 'CorrespondencesController@index')->name('correspondences.index');
+  Route::get('/', 'CorrespondencesController@index')->name('correspondences.index');
+  Route::get('/create', function () {
+    // TODO: Create register form
+    echo 'Cadastro de correspondências.';
+  })->name('correspondence.create');
+  Route::post('/create/save', 'CorrespondencesController@create')->name('correspondence.save');
 });
 
 Auth::routes([
-    'register' => false,
-    'reset' => false,
-    'verify' => false,
+  'register' => false,
+  'reset' => false,
+  'verify' => false,
 ]);
 
 Route::get('/home', 'HomeController@index')->name('home');
