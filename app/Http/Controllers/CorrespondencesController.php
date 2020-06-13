@@ -20,7 +20,16 @@ class CorrespondencesController extends Controller
     }
   }
 
-  public function create(CreateCorrespondenceRequest $req)
+  public function create() {
+
+    $uf_list =  [
+      "AC","AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"
+    ];
+
+    return view('correspondence.create', ["uf_list" => $uf_list]);
+  }
+
+  public function save(CreateCorrespondenceRequest $req)
   {
     $req->validated();
 
@@ -34,7 +43,7 @@ class CorrespondencesController extends Controller
       $correspondence->cep = $req->input('cep');
       $correspondence->city = $req->input('city');
       $correspondence->uf = $req->input('uf');
-      $correspondence->status = $req->input('status');
+      $correspondence->status = "pendente";
       $correspondence->id_recipient = $req->input('id_recipient');
 
       $correspondence->save();
