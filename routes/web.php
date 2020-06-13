@@ -21,11 +21,8 @@ Route::middleware(['auth'])->prefix('/')->group(function () {
 
 Route::middleware(['auth'])->prefix('correspondences')->group(function () {
   Route::get('/', 'CorrespondencesController@index')->name('correspondences.index');
-  Route::get('/create', function () {
-    // TODO: Create register form
-    echo 'Cadastro de correspondências.';
-  })->name('correspondence.create');
-  Route::post('/create/save', 'CorrespondencesController@create')->name('correspondence.save');
+  Route::get('/create', 'CorrespondencesController@create')->name('correspondence.create');
+  Route::post('/create/save', 'CorrespondencesController@save')->name('correspondence.save');
 });
 
 Auth::routes([

@@ -193,6 +193,8 @@ html, body {
 .btn-new {
     background-color: #0748B4;
     padding: 11px 35px;
+    margin-left: 16px;
+    border: none;
     border-radius: 8px;
     display: block;
     color: #ffffff;
@@ -247,4 +249,85 @@ html, body {
 .table-head tr th, .table-body tr td{
     text-align: center;
     padding: 15px;
+}
+
+/* Alerts */
+.alert-error {
+    display: block;
+    margin-top: -7px;
+    margin-bottom: 17px;
+    text-transform: none;
+    font-size: 12px;
+    font-weight: normal;
+    color:#db0030;
+}
+
+.alert-success {
+    display: block;
+    padding: 10px;
+    border: 1px solid #61936A;
+    border-radius: 6px;
+    background-color: #95e8ae;
+    color: #61936A;
+}
+
+/*  Form  */
+
+.main-options div a {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #0748B4;
+}
+
+.form {
+    width: 90%;
+}
+
+
+.form input, .form select {
+    font-size: 16px;
+}
+
+.input-form::placeholder, .form option {
+    color: #888888;
+}
+
+.form label {
+    color: #0748B4;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/** Form layout **/
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.col-1 {
+    width: 20%;
+}
+
+.col-2 {
+    width: 40%;
+}
+
+.col-3 {
+    width: 60%;
+}
+
+.col-4 {
+    width: 80%;
+}
+
+.col-5 {
+    width: 100%;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5 {
+    padding-left: 16px;
 }
