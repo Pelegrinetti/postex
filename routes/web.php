@@ -23,6 +23,7 @@ Route::middleware(['auth'])->prefix('correspondences')->group(function () {
   Route::get('/', 'CorrespondencesController@index')->name('correspondences.index');
   Route::get('/create', 'CorrespondencesController@create')->name('correspondence.create');
   Route::post('/create/save', 'CorrespondencesController@save')->name('correspondence.save');
+  Route::post('/search', 'CorrespondencesController@search')->name('correspondence.search');
 });
 
 Auth::routes([
