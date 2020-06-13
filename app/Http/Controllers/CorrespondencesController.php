@@ -54,4 +54,18 @@ class CorrespondencesController extends Controller
       return redirect()->back()->with('status', ['created' => false]);
     }
   }
+
+  public function search(Request $req) {
+    $query = $req->get('query');
+
+    try {
+
+      $result = Correspondence::where('recipient', 'like', '%'.$query.'%')->paginate(10);
+
+      return $result;
+
+    }catch (\Exception $ex){
+      //
+    }
+  }
 }
