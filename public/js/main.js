@@ -1,10 +1,20 @@
-/* Search correspondences*/
+/* Debounce function */
+
+function debounce(callback, ms) {
+    let timer = null;
+    return function() {
+      clearTimeout(timer)
+      timer = setTimeout(callback.bind(this), ms)
+    }
+  }
+
+/* Search correspondences */
 
 $(document).ready(function() {
     
     var token = $('meta[name="csrf-token"]').attr('content');
     
-    $('#search-recipient').keyup(function() {
+    $('#search-recipient').keyup(debounce(function() {
         $.ajax({
             url: "correspondences/search",
             type: "post",
@@ -35,5 +45,5 @@ $(document).ready(function() {
                 }
             }
         })
-    })
+    },500))
 })
