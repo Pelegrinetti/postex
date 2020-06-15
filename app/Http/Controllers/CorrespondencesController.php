@@ -56,16 +56,14 @@ class CorrespondencesController extends Controller
   }
 
   public function search(Request $req) {
-    $query = $req->get('query');
-
     try {
-
+      $query = $req->get('query');
       $result = Correspondence::where('recipient', 'like', '%'.$query.'%')->paginate(10);
-
       return $result;
-
+      
     }catch (\Exception $ex){
-      //
+      Log::error($ex->getMessage());
+      return ['error' => true];
     }
   }
 }
