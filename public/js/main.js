@@ -35,7 +35,17 @@ $(document).ready(function() {
                                     <td>${recipient.city}</td>
                                     <td>${recipient.uf}</td>
                                     <td>${recipient.cep}</td>
-                                    <td><i class="fas fa-caret-down"></i></td>
+                                    <td class="dropdown">
+                                        <div class="dropdown-toggle">
+                                            <i class="fas fa-chevron-circle-down"></i>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="#">Editar</a>
+                                                <a href="#">Deletar</a>
+                                            </li>
+                                        </ul>
+                                    </td>
                                 <tr>`;
                     }));
                 } else {
@@ -47,3 +57,17 @@ $(document).ready(function() {
         })
     },500))
 })
+
+/* Actions */
+
+$('.table').click(function(e) {
+    var target = e.target;
+    $('.dropdown-menu').each(function() {
+        /* Mapping click area */
+        var menu = $(this).prev('.dropdown-toggle');
+        var svg = $(menu).children('svg');
+        var path = $(svg).children('path');
+        if (menu[0] == target || svg[0] == target || path[0] == target) $(this).toggle();
+        else $(this).hide();
+    });
+});
