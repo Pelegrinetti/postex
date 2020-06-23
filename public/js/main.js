@@ -41,8 +41,8 @@ $(document).ready(function() {
                                         </div>
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <a href="#">Editar</a>
-                                                <a href="#">Deletar</a>
+                                                <a href="#"><i class="fas fa-pen"></i>Editar</a>
+                                                <a href="#"><i class="fas fa-trash"></i>Deletar</a>
                                             </li>
                                         </ul>
                                     </td>
