@@ -12,7 +12,7 @@ class CorrespondencesController extends Controller
   public function index(Request $req)
   {
     try {
-      $correspondences = Correspondence::paginate();
+      $correspondences = Correspondence::paginate(5);
 
       return view('correspondences', ["correspondences" => $correspondences]);
     } catch (\Exception $ex) {

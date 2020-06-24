@@ -37,12 +37,21 @@
                         <td>{{$correspondence->city}}</td>
                         <td>{{$correspondence->uf}}</td>
                         <td>{{$correspondence->cep}}</td>
-                        <td><i class="fas fa-caret-down"></i></td>
+                        <td class="dropdown">
+                            <div class="dropdown-toggle">
+                                <i class="fas fa-chevron-circle-down"></i>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#"><i class="fas fa-pen"></i>Editar</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Deletar</a>
+                                </li>
+                            </ul>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </section>
-
     </div>
 @endsection
