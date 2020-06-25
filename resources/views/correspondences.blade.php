@@ -44,7 +44,9 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="#"><i class="fas fa-pen"></i>Editar</a>
-                                    <a href="#"><i class="fas fa-trash"></i>Deletar</a>
+                                    <a href="{{route('correspondence.delete', $correspondence->id)}}">
+                                      <i class="fas fa-trash"></i>Deletar
+                                    </a>
                                 </li>
                             </ul>
                         </td>
