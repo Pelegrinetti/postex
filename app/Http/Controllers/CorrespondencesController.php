@@ -62,6 +62,21 @@ class CorrespondencesController extends Controller
     }
   }
 
+  public function delete(Request $req)
+  {
+    try {
+      $correspondence = Correspondence::find($req->id);
+
+      $correspondence->delete();
+
+      return redirect()->back()->with('status', ['deleted' => true]);
+    } catch (\Exception $ex) {
+      Log::error($ex->getMessage());
+
+      return redirect()->back()->with('status', ['deleted' => false]);
+    }
+  }
+
   public function edit(Request $req)
   {
     try {
