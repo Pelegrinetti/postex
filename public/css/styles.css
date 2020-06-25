@@ -18,7 +18,7 @@ html, body {
 /* Login Layout */
 
 .login-container {
-    background: linear-gradient(115.6deg, rgba(7, 72, 180, 0.76) 1.32%, rgba(47, 128, 237, 0.63) 98.71%) , 
+    background: linear-gradient(115.6deg, rgba(7, 72, 180, 0.76) 1.32%, rgba(47, 128, 237, 0.63) 98.71%) ,
     url('../images/background.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -349,11 +349,11 @@ html, body {
     padding: 10px;
     text-align: left;
     list-style-type: none;
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     z-index: 1;
-    transform: translate(-100%, 0%);
+    transform: translate(-35%, -10%);
 }
 
 .dropdown-menu li svg {
