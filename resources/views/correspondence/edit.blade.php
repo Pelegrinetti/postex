@@ -10,8 +10,9 @@
         </section>
 
         <section class="form">
-            <form action="{{ route('correspondence.save') }}" method="POST">
+            <form action="{{ route('correspondence.edit.save') }}" method="POST">
                 @csrf
+                <input type="hidden" name="id" value="{{$correspondence->id}}">
                 <div class="row">
                     <div class="col-5">
                         <label for="recipient">* Destinatário</label>
