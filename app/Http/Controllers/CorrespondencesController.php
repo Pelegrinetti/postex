@@ -21,9 +21,7 @@ class CorrespondencesController extends Controller
 
   public function create()
   {
-    $uf_list =  [
-      "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"
-    ];
+    $uf_list =  $this->getUfList();
 
     return view('correspondence.create', ["uf_list" => $uf_list]);
   }
@@ -62,5 +60,25 @@ class CorrespondencesController extends Controller
       Log::error($ex->getMessage());
       return ['error' => true];
     }
+  }
+
+  public function edit(Request $req)
+  {
+    try {
+      $correspondence = Correspondence::find($req->id);
+
+      return view('correspondence.edit', ["correspondence" => $correspondence, "uf_list" => $this->getUfList()]);
+    } catch (\Exception $ex) {
+      dd($ex->getMessage());
+
+      return redirect()->back()->with('status', ['edited' => false]);
+    }
+  }
+
+  private function getUfList()
+  {
+    return [
+      "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"
+    ];
   }
 }
