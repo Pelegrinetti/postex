@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Correspondence;
-use App\Http\Requests\CreateCorrespondenceRequest;
 use Illuminate\Support\Facades\Log;
 
 class CorrespondencesController extends Controller
@@ -20,19 +19,17 @@ class CorrespondencesController extends Controller
     }
   }
 
-  public function create() {
-
+  public function create()
+  {
     $uf_list =  [
-      "AC","AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"
+      "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RO", "RS", "RR", "SC", "SE", "SP", "TO"
     ];
 
     return view('correspondence.create', ["uf_list" => $uf_list]);
   }
 
-  public function save(CreateCorrespondenceRequest $req)
+  public function save(Request $req)
   {
-    $req->validated();
-
     try {
       $correspondence = new Correspondence();
 
@@ -55,12 +52,13 @@ class CorrespondencesController extends Controller
     }
   }
 
-  public function search(Request $req) {
+  public function search(Request $req)
+  {
     try {
       $query = $req->get('query');
-      $result = Correspondence::where('recipient', 'like', '%'.$query.'%')->paginate(10);
+      $result = Correspondence::where('recipient', 'like', '%' . $query . '%')->paginate(10);
       return $result;
-    }catch (\Exception $ex){
+    } catch (\Exception $ex) {
       Log::error($ex->getMessage());
       return ['error' => true];
     }
