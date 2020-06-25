@@ -69,7 +69,7 @@ class CorrespondencesController extends Controller
 
       return view('correspondence.edit', ["correspondence" => $correspondence, "uf_list" => $this->getUfList()]);
     } catch (\Exception $ex) {
-      dd($ex->getMessage());
+      Log::error($ex->getMessage());
 
       return redirect()->back()->with('status', ['edited' => false]);
     }
