@@ -24,7 +24,7 @@ Route::middleware(['auth'])->prefix('correspondences')->group(function () {
   Route::get('/create', 'CorrespondencesController@create')->name('correspondence.create');
   Route::post('/create/save', 'CorrespondencesController@save')->name('correspondence.save');
   Route::post('/search', 'CorrespondencesController@search')->name('correspondence.search');
-  Route::get('/users/{id}', 'CorrespondencesController@edit')->name('correspondence.edit');
+  Route::get('/edit/{id}', 'CorrespondencesController@edit')->name('correspondence.edit');
 });
 
 Auth::routes([
