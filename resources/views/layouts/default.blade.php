@@ -11,9 +11,6 @@
     <nav class="sidebar">
         <ul>
             <li>
-                <a href="/dashboard"> <i class="fas fa-columns"> </i>Dashboard</a>
-            </li>
-            <li>
                 <a href="{{ route('correspondences.index') }}"> <i class="far fa-envelope"></i> Correspondências</a>
             </li>
             <li>
