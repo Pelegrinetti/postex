@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->prefix('/')->group(function () {
   Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('correspondences.index');
   });
 
   Route::get('/logout', function () {
