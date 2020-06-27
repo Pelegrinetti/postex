@@ -5,7 +5,7 @@
     <header class="header">
         <img src="{{ asset('images/logo-title.svg')}}" alt="Logo postex">
         <nav>
-            <a href="/">Sair <i class="fas fa-sign-out-alt"></i></a>
+            <a href="{{route('logout')}}"">Sair <i class="fas fa-sign-out-alt"></i></a>
         </nav>
     </header>
     <nav class="sidebar">
