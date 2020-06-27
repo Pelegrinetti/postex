@@ -81,6 +81,18 @@
                                 <div class="alert-error"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </div>
                             @enderror
                         </div>
+                        <div class="col-1">
+                          <label for="status">* Situação</label>
+                          <select id="status" name="status" class="input-form">
+                              <option value="pendente">Selecione</option>
+                              <option value="pendente" @if("pendente" === $correspondence->status) selected @endif>Pendente</option>
+                              <option value="devolvida" @if("devolvida" === $correspondence->status) selected @endif>Devolvida</option>
+                              <option value="entregue" @if("entregue" === $correspondence->status) selected @endif>Entregue</option>
+                           </select>
+                          @error('status')
+                              <div class="alert-error"><i class="fas fa-exclamation-triangle"></i> {{ $message }} </div>
+                          @enderror
+                      </div>
                     </div>
                 <input type="submit" value="Salvar" class="btn-new">
             </form>
