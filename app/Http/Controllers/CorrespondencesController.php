@@ -102,7 +102,7 @@ class CorrespondencesController extends Controller
       $correspondence->cep = $req->input('cep');
       $correspondence->city = $req->input('city');
       $correspondence->uf = $req->input('uf');
-      $correspondence->status = "pendente";
+      $correspondence->status = $req->input('status');
       $correspondence->id_recipient = $req->input('id_recipient');
 
       $correspondence->save();
