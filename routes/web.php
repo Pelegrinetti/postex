@@ -17,6 +17,12 @@ Route::middleware(['auth'])->prefix('/')->group(function () {
   Route::get('/', function () {
     return redirect()->route('correspondences.index');
   });
+
+  Route::get('/logout', function () {
+    Auth::logout();
+
+    return redirect("login");
+  })->name('logout');
 });
 
 Route::middleware(['auth'])->prefix('correspondences')->group(function () {
